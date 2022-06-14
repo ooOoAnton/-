@@ -13,7 +13,7 @@ wikipedia.set_lang("ru")
 def getwiki(s):
     try:
         ny = wikipedia.page(s)
-        # Получаем первую тысячу символов
+        # Получаем первую 500 символов
         wikitext=ny.content[:500]
         # Разделяем по точкам
         wikimas=wikitext.split('.')
@@ -60,7 +60,7 @@ def start(message, res=False):
         connect.commit()
         bot.send_message(message.chat.id, 'Добро пожаловать')
     else:
-        bot.send_message(message.chat.id, 'снова ты')# Такой пользователь уже существует'
+        bot.send_message(message.chat.id, 'снова ты')# пользователь с таким ID существует
 
     # обрабатывающая команду /start
     bot.send_message(message.chat.id, 'значение какого слова хочешь узнать')
